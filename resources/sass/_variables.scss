@@ -1,0 +1,157 @@
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: 'Arial', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+//Custom Styling
+.navbar{
+	background-color: #6d00d9;		
+}
+
+body{
+  font-family:Raleway;  
+}
+a,a:hover{
+  color: #FFFFFF;
+  text-decoration:none;
+}
+label{
+  margin-top:1.5em;
+}
+#app {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 15vh;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
+
+#footerImg{
+	width:100%;	
+}
+.btn-primary{
+  background-color:#6d00d9;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.col-lg-12,.col-md-12,.col-sm-12,.col-xs-12{
+	padding-right: 0px;
+  padding-left: 0px;
+}
+#loginDiv{
+  border-right:1px solid #ddd;
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;
+    border-color: #6d00d9;
+    background-color: #6d00d9;
+}
+.icons{
+  font-size:.7em;
+}
+.icons img{
+  height:30px;
+}
+.icons li{
+  text-align:center;
+  color:#FFF;
+  padding:0em 1em;
+  transition: transform .2s;
+}
+.icons li:hover{
+  color:#RED;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+  transform: scale(1.5);
+}
+
+.fieldset.scheduler-border {
+    border: 1px 0 0 0 #eee !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+.legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+}
+
+.album{
+  position: relative;  
+  padding:.2em;
+  width: 100%;
+  background-size:contain;
+  cursor:pointer;
+}
+.album:before{
+  content: "";
+  display: block;
+  padding-top: 100%;  /*What you want the height to be in relation to the width*/
+}
+.albumtext{
+  position: absolute;
+  background-color:#6d00d9;
+  color:#FFFFFF;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}
+.albumtext:hover{
+  opacity: 1; 
+}
+.album:hover{
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+}
+
+
+.edit{
+  position: absolute;
+  bottom: .5em;
+  left: .5em;
+  height: 1.5em;
+  width:auto;
+}
+.del{
+  position: absolute;
+  bottom: .5em;
+  right: .5em;
+  height: 1.5em;
+  width:auto;
+}
+
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66d9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
