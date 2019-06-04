@@ -41,6 +41,7 @@
         </div>
     </div>
 </div>
+
 <script type="application/javascript">
     $(document).ready(function(){
         $(".album").click(function(){
@@ -50,6 +51,22 @@
         });
     });
 </script>
+
+
+<div id="player">
+    <audio controls id="myAudio">
+        <source>  
+    </audio>        
+</div>
+
+
+<script type="application/javascript">
+var x = document.getElementById("myAudio"); 
+function pauseAudio() { 
+x.pause(); 
+} 
+</script>
+
 @endsection
 
 

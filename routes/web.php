@@ -18,6 +18,10 @@ Route::get('/addalbum',function(){
 	return view('album.add')->with('user', Auth::user());
 });
 
+Route::get('/player',function(){
+	return view('player');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
