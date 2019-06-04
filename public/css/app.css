@@ -10676,10 +10676,6 @@ a:hover {
   text-decoration: none;
 }
 
-label {
-  margin-top: 1.5em;
-}
-
 #app {
   position: relative;
   min-height: 100vh;
@@ -10773,7 +10769,8 @@ label {
   border-bottom: none;
 }
 
-.album {
+.album,
+.song {
   position: relative;
   padding: 0.2em;
   width: 100%;
@@ -10781,7 +10778,8 @@ label {
   cursor: pointer;
 }
 
-.album:before {
+.album:before,
+.song:before {
   content: "";
   display: block;
   padding-top: 100%;

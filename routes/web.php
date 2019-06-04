@@ -14,9 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/addalbum',function(){
 	return view('album.add')->with('user', Auth::user());
 });
+Route::get('/addsong',function(){
+	return view('song.add')->with('user', Auth::user());
+});
+
+Route::post('/addalbum','AlbumController@create');
 
 Auth::routes();
 
@@ -25,3 +31,4 @@ Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
 
 Route::get('/album/{user}', 'AlbumController@index')->name('album.show');
+

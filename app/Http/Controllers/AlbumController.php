@@ -19,4 +19,19 @@ class AlbumController extends Controller
         ];
     	return view('album')->with($data);
     }
+    public function create($request)
+    {
+        $this->validate($request,
+            [
+                'albumname' => 'required',
+                'albumauthor' => 'required',
+                'pprice' => 'required|numeric'
+            ]
+        );
+        $product = new Product();
+        $product->name = $request->pname;
+        $product->description = $request->pdescription;
+        $product->price = $request->pprice;
+        $product->save();
+    }
 }
