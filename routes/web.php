@@ -23,6 +23,9 @@ Route::get('/addsong',function(){
 });
 
 Route::post('/addalbum','AlbumController@create');
+Route::post('uploadcrop','AlbumController@uploadcrop');
+
+
 
 Auth::routes();
 

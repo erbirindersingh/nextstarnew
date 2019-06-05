@@ -1,6 +1,19 @@
 @extends('layouts.app')
 @section('content')
-    
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div id="homepage-left-content">
+                <div id="title">MUSIC MADE<br />SOCIAL</div>
+                <div id="subtitle">A social music network that<br />connects users through music<br />discovery.</div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+             <img src="{{URL::asset('/images/headphones-guy.png')}}" id="homepage-headphoneguy-img"/>
+        </div>
+    </div>
+   <div >
+      
+   </div> 
 @endsection
 <!--
 <!DOCTYPE html>
