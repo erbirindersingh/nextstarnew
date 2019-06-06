@@ -10,7 +10,9 @@ $line-height-base: 1.6;
 .navbar{
 	background-color: #6d00d9;		
 }
-
+.navbar-light .navbar-nav .nav-link{
+    color:white;
+}
 body{
   font-family:Raleway;  
 }
