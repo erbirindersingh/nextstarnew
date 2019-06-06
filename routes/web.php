@@ -22,7 +22,7 @@ Route::get('/addsong',function(){
 	return view('song.add')->with('user', Auth::user());
 });
 
-Route::post('/addalbum','AlbumController@create');
+Route::post('addalbum','AlbumController@create');
 Route::post('uploadcrop','AlbumController@uploadcrop');
 
 
