@@ -32,7 +32,7 @@
                     <fieldset class="scheduler-border">
                         <legend class="scheduler-border">Songs in </legend>
                         <div class="row control-group">
-                            
+                            <div class='col-lg-3 col-md-4 col-sm-6 col-xs-6 song' id="0" style='background-image:url("/images/add.png");'>
                         </div>
                     </fieldset>
                 </div>
@@ -47,6 +47,11 @@
         $(".album").click(function(){
             if(this.id==0){
                 $(location).attr('href', '/addalbum');
+            }
+        });
+        $(".song").click(function(){
+            if(this.id==0){
+                $(location).attr('href', '/addsong');
             }
         });
     });

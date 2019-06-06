@@ -6,11 +6,11 @@
 	        <form method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="form-group row">
-                    <label for="albumcover" class="col-md-4 col-form-label text-md-right">{{ __('Cover') }}</label>
+                    <label for="songfile" class="col-md-4 col-form-label text-md-right">{{ __('Select File') }}</label>
                     <div class="col-md-6">
-                        <input id="albumcover" type="file" class="btn btn-primary @error('albumcover') is-invalid @enderror" name="albumcover" required autocomplete="albumcover">
+                        <input id="songfile" type="file" class="btn btn-primary @error('songfile') is-invalid @enderror" name="songfile" required autocomplete="songfile">
 
-                        @error('albumcover')
+                        @error('songfile')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -19,10 +19,10 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Album Name') }}</label>
+                    <label for="songtitle" class="col-md-4 col-form-label text-md-right">{{ __('Song Title') }}</label>
                     <div class="col-md-6">
-                        <input id="albumname" type="text" class="form-control @error('albumname') is-invalid @enderror" name="albumname" value="{{ old('albumname') }}" required autocomplete="albumname" autofocus>
-                        @error('albumname')
+                        <input id="songtitle" type="text" class="form-control @error('songtitle') is-invalid @enderror" name="songtitle" value="{{ old('songtitle') }}" required autocomplete="songtitle" autofocus>
+                        @error('songtitle')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -31,21 +31,44 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="albumauthorname" class="col-md-4 col-form-label text-md-right">{{ __('Album Artist') }}</label>
+                    <label for="songauthorname" class="col-md-4 col-form-label text-md-right">{{ __('Song Artist') }}</label>
                     <div class="col-md-6">
-                        <input id="albumauthorname" type="text" class="form-control" name="albumauthorname" value="{{ $user->name }}" required disabled>
-                        <input id="albumauthor" type="hidden" class="form-control" name="albumauthor" value="{{ $user->id }}" required disabled>
-                        @error('albumauthor')
+                        <input id="songauthorname" type="text" class="form-control" name="songauthorname" value="{{ $user->name }}" required disabled>
+                        <input id="songauthor" type="hidden" class="form-control" name="songauthor" value="{{ $user->id }}" required disabled>
+                        @error('songauthor')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                     </div>
                 </div>
+
+                <div class="form-group row">
+                    <label for="songgenre" class="col-md-4 col-form-label text-md-right">{{ __('Genre') }}</label>
+                    <div class="col-md-6">
+                        <select id="songgenre" class="form-control" name="songgenre" required>
+                            <option value=''>HipHop</option>
+                            <option value=''>Classical</option>
+                            <option value=''>Reggae</option>
+                            <option value=''>Rock</option>
+                            <option value=''>Jazz</option>
+                            <option value=''>Heavy Metal</option>
+                            <option value=''>Dance</option>
+                            <option value=''>Pop</option>
+
+                        </select>
+                        @error('songgenre')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+
                 <div class="form-group row mb-0">
                     <div class="col-md-6 offset-md-4">
                         <button type="submit" class="btn btn-primary">
-                            {{ __('Add Album') }}
+                            {{ __('Add Song') }}
                         </button>
                     </div>
                 </div>

@@ -10769,7 +10769,8 @@ a:hover {
   border-bottom: none;
 }
 
-.album {
+.album,
+.song {
   position: relative;
   padding: 0.2em;
   width: 100%;
@@ -10777,7 +10778,8 @@ a:hover {
   cursor: pointer;
 }
 
-.album:before {
+.album:before,
+.song:before {
   content: "";
   display: block;
   padding-top: 100%;

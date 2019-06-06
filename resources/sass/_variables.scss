@@ -93,14 +93,14 @@ a,a:hover{
     border-bottom:none;
 }
 
-.album{
+.album,.song{
   position: relative;  
   padding:.2em;
   width: 100%;
   background-size:contain;
   cursor:pointer;
 }
-.album:before{
+.album:before,.song:before{
   content: "";
   display: block;
   padding-top: 100%;  /*What you want the height to be in relation to the width*/
