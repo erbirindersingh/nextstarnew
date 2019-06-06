@@ -3,18 +3,14 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-	        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+	        <form method="POST" action="addalbum" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group row">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Select Product Image</div>
-                        <div class="panel-body" align="center">
-                            <input type="file" name="file" id="upload_image" />
-                            <input type="text" name="upload_image1" id="upload_image1" />
-
-                            <div id="uploaded_image"></div>
-                        </div>
+                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Album Cover') }}</label>
+                    <div class="col-md-6">
+                        <input type="file" name="file" id="upload_image" class="btn btn-primary"/>
+                        <input type="hidden" name="upload_image1" id="upload_image1" />
                     </div>
                     <div id="uploadimageModal" class="modal" role="dialog">
                         <div class="modal-dialog">
@@ -41,19 +37,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="albumcover" class="col-md-4 col-form-label text-md-right">{{ __('Cover') }}</label>
-                    <div class="col-md-6">
-                        <input id="albumcover" type="file" class="btn btn-primary @error('albumcover') is-invalid @enderror" name="albumcover" required autocomplete="albumcover">
-
-                        @error('albumcover')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
                     </div>
                 </div>
 
@@ -120,6 +103,9 @@
 			<input type="text" name="albumname" id="albumname" class="form-control">
 			-->
 		</div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div id="uploaded_image"></div>
+        </div>
 	</div>
 </div>
 
@@ -178,8 +164,6 @@ $(document).ready(function()
         type: 'canvas',
         size: 'viewport'
         }).then(function(response){
-
-            
             $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

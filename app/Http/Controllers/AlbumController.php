@@ -33,19 +33,26 @@ class AlbumController extends Controller
         }
     }
 
-    public function create($request)
+    public function create(Request $request)
     {
         $this->validate($request,
             [
                 'albumname' => 'required',
                 'albumauthor' => 'required',
-                'pprice' => 'required|numeric'
+                'upload_image1' => 'required'
             ]
         );
-        $product = new Product();
-        $product->name = $request->pname;
-        $product->description = $request->pdescription;
-        $product->price = $request->pprice;
-        $product->save();
+
+        $id=time();    
+        $album = new Album();
+        $albun->id = $id; 
+        $album->artistid = $request->albumauthor;
+        $album->isdeleted = 0;
+        $album->created_at = $id;
+        $album->updated_at = $id;
+        $album->save();
+
+        rename($request->upload_image1.".jpg", "/images/albums/$id.jpg");
+        return redirect("/album/$request->albumauthor");
     }
 }
