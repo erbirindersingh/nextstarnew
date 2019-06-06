@@ -19,6 +19,20 @@ class AlbumController extends Controller
         ];
     	return view('album')->with($data);
     }
+    public function uploadcrop(){
+        if(isset($_POST['image']))
+        {
+            $data = $_POST['image'];
+            $image_array_1 = explode(";", $data);
+            $image_array_2 = explode(",", $image_array_1[1]);
+            $data = base64_decode($image_array_2[1]);
+            $time=round(microtime(true) * 1000);
+            $imageName = $time.'.jpg';
+            file_put_contents($imageName, $data);
+            return '<img src="'.$imageName.'" class="img-thumbnail" />~'.$time;
+        }
+    }
+
     public function create($request)
     {
         $this->validate($request,

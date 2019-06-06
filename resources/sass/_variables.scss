@@ -140,7 +140,45 @@ a,a:hover{
   width:auto;
 }
 
+#homepage-headphoneguy-img{
+  margin:0 auto;
+  width:100%;
+}
 
+#homepage-left-content {
+    font-family: "Bevan", cursive;
+    color: #6d00d9;
+    /* float: left; */
+    /* width: 45%; */
+    text-align: center;
+    margin-top: 200px;
+}
+
+#title {
+    font-size: 3em;
+    font-weight: bold;
+    line-height: 1em;
+}
+
+#subtitle {
+    margin-top: 40px;
+    line-height: 1em;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.home-nav-button{
+  color:white;
+}
+@media only screen and (max-width: 380px) {
+  /* For mobile phones: */
+  #homepage-left-content {
+    margin:20px;
+  }
+
+  #footer{
+  }
+}
 // Colors
 $blue: #3490dc;
 $indigo: #6574cd;
@@ -152,3 +190,4 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
