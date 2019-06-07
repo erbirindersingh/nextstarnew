@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Album;
 use Illuminate\Http\Request;
 use DB;
 
@@ -35,6 +36,7 @@ class AlbumController extends Controller
 
     public function create(Request $request)
     {
+        /*
         $this->validate($request,
             [
                 'albumname' => 'required',
@@ -42,17 +44,21 @@ class AlbumController extends Controller
                 'upload_image1' => 'required'
             ]
         );
+        */
+
+        //dd($request);
 
         $id=time();    
         $album = new Album();
-        $albun->id = $id; 
+        $album->id = $id; 
+        $album->albumname = $request->albumname;
         $album->artistid = $request->albumauthor;
         $album->isdeleted = 0;
         $album->created_at = $id;
         $album->updated_at = $id;
         $album->save();
-
-        rename($request->upload_image1.".jpg", "/images/albums/$id.jpg");
+        //return view('album');
+        rename($request->upload_image1.".jpg", "images/albums/$id.jpg");
         return redirect("/album/$request->albumauthor");
     }
 }
