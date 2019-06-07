@@ -50,27 +50,25 @@
                             </span>
                         @enderror
                     </div>
-                </div>
 
-                <div class="form-group row">
                     <label for="albumauthorname" class="col-md-4 col-form-label text-md-right">{{ __('Album Artist') }}</label>
                     <div class="col-md-6">
-                        <input id="albumauthorname" type="text" class="form-control" name="albumauthorname" value="{{ $user->name }}" required disabled>
-                        <input id="albumauthor" type="hidden" class="form-control" name="albumauthor" value="{{ $user->id }}" required disabled>
+                        <input id="albumauthorname" type="text" class="form-control" name="albumauthorname" value="{{ $user->name }}" required readonly>
+                        <input id="albumauthor" type="hidden" class="form-control" name="albumauthor" value="{{ $user->id }}" required readonly>
                         @error('albumauthor')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                     </div>
-                </div>
-                <div class="form-group row mb-0">
                     <div class="col-md-6 offset-md-4">
                         <button type="submit" class="btn btn-primary">
                             {{ __('Add Album') }}
                         </button>
                     </div>
+
                 </div>
+
             </form>
                 <!--
                         <div class="form-group row">
