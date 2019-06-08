@@ -5,6 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <h1>Upload A New Song</h1>
+			<audio controls>
+			  <source src='{{URL::asset('/songs/madho.mp3')}}' type="audio/mp3">
+			Your browser does not support the audio element.
+			</audio>
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <fieldset class="scheduler-border">
