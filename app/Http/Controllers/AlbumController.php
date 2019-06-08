@@ -11,7 +11,7 @@ class AlbumController extends Controller
     public function index($user)
     {
     	$user=User::find($user);
-    	$albums=DB::table('Albums')->where('artistid',$user->id)->get();
+    	$albums=DB::table('Albums')->where('artistid',$user->id)->where('isdeleted',0)->get();
 
     	//dd($albums);
         $data=[
@@ -19,6 +19,14 @@ class AlbumController extends Controller
             'albums' => $albums,
         ];
     	return view('album')->with($data);
+    }
+    public function showall()
+    {
+    	$albums=DB::table('Albums')->where('isdeleted',0)->get();
+    	$data=[
+            'albums' => $albums,
+        ];
+    	return view('directory')->with($data);
     }
     public function uploadcrop(){
         if(isset($_POST['image']))
@@ -58,7 +66,7 @@ class AlbumController extends Controller
         $album->updated_at = $id;
         $album->save();
         //return view('album');
-        rename($request->upload_image1.".jpg", "images/albums/$id.jpg");
+        rename($request->upload_image1.".jpg", " images/albums/$id.jpg");
         return redirect("/album/$request->albumauthor");
     }
 }

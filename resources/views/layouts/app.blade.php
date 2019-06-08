@@ -47,13 +47,13 @@
                     <ul class="navbar-nav mr-auto icons">
                         <li><img src="{{URL::asset('/images/home.png')}}"><div>HOME</div></li>
                         <li><img src="{{URL::asset('/images/hub.png')}}"><div>HUB</div></li>
-                        <li><img src="{{URL::asset('/images/playlist.png')}}"><div>LIST</div></li>
-                        <li><img src="{{URL::asset('/images/charts.png')}}"><div>CHART</div></li>
+                        <li><a href='/album/{{Auth::user()->id}}'><img src="{{URL::asset('/images/playlist.png')}}"><div>LIST</div></li>
+                        <li><img src="{{URL::asset('/images/charts.png')}}"><div>CHART</div></a></li>
                         <li><img src="{{URL::asset('/images/notification.png')}}"><div>NEWS</div></li>
                     </ul>
 
                     <ul class="navbar-nav ml-auto icons">
-                        <li><img src="{{URL::asset('/images/directory.png')}}"><div>DIRECTORY</div></li>
+                        <li><a href='/directory'><img src="{{URL::asset('/images/directory.png')}}"><div>DIRECTORY</div></a></li>
                         @if(Auth::user()->role==1)
                             <li><a href='/album/{{Auth::user()->id}}'><img src="{{URL::asset('/images/upload.png')}}"><div>UPLOAD</div></a></li>
                         @endif
