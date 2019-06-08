@@ -10,7 +10,7 @@
                     <fieldset class="scheduler-border">
         			    <div class="row control-group">
                             @foreach ($albums as $album)
-                                    <div class='col-lg-3 col-md-4 col-sm-6 col-xs-6 album' style='background-image:url("/images/albums/{{$album->id}}.jpg");' id="{{$album->id}}">
+                                    <div class='col-lg-2 col-md-3 col-sm-4 col-xs-6 album' style='background-image:url("/images/albums/{{$album->id}}.jpg");' id="{{$album->id}}">
                                         
                                         <div class='albumtext'> 
                                             <div>{{ $album->albumname }}</div>
