@@ -30,9 +30,11 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <fieldset class="scheduler-border">
-                        <legend class="scheduler-border">Songs in </legend>
+                        <div><input type="hidden" id="selectedAlbum" name="selectedAlbum"></div>
+                        <legend class="scheduler-border">Songs in <span id="albumname"></span></legend>
                         <div class="row control-group">
-                            <div class='col-lg-3 col-md-4 col-sm-6 col-xs-6 song' id="0" style='background-image:url("/images/add.png");'>
+                            <div class='col-lg-3 col-md-4 col-sm-6 col-xs-6 song hidden' id="0" style='background-image:url("/images/add.png");'>
+
                         </div>
                     </fieldset>
                 </div>
@@ -43,14 +45,20 @@
 </div>
 <script type="application/javascript">
     $(document).ready(function(){
+
         $(".album").click(function(){
             if(this.id==0){
                 $(location).attr('href', '/addalbum');
             }
+            else{
+                $("#selectedAlbum").val(this.id);
+                $(".song").removeClass("hidden");
+            }
         });
         $(".song").click(function(){
             if(this.id==0){
-                $(location).attr('href', '/addsong');
+                $albumId=$("#selectedAlbum").val();
+                $(location).attr('href', '/addsong/'+{{$user->id}}+'/'+$albumId);
             }
         });
     });

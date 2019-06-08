@@ -58,7 +58,7 @@ class AlbumController extends Controller
         $album->updated_at = $id;
         $album->save();
         //return view('album');
-        rename($request->upload_image1.".jpg", "images/albums/$id.jpg");
+        rename($request->upload_image1.".jpg", " images/albums/$id.jpg");
         return redirect("/album/$request->albumauthor");
     }
 }
