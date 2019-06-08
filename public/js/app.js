@@ -51258,7 +51258,7 @@ module.exports = __webpack_require__(/*! C:\Users\PC\Desktop\nextstar\resources\
 =======
 __webpack_require__(/*! D:\Humber\Sem3\nextstar\nextstar\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! D:\Humber\Sem3\nextstar\nextstar\resources\sass\app.scss */"./resources/sass/app.scss");
->>>>>>> 587838e207b4c1528cd38fe614234966ac7769a1
+>>>>>>> 2de24b0bf82ca0600ffc1b314f620afcb4621430
 
 
 /***/ })
