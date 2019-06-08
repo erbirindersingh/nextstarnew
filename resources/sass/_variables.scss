@@ -118,7 +118,7 @@ a,a:hover{
 .albumtext:hover{
   opacity: 1; 
 }
-.album:hover{
+.album:hover,.song:hover{
   -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
