@@ -33,9 +33,23 @@
                 <div class="form-group row">
                     <label for="songauthorname" class="col-md-4 col-form-label text-md-right">{{ __('Song Artist') }}</label>
                     <div class="col-md-6">
-                        <input id="songauthorname" type="text" class="form-control" name="songauthorname" value="{{ $user->name }}" required disabled>
-                        <input id="songauthor" type="hidden" class="form-control" name="songauthor" value="{{ $user->id }}" required disabled>
+                        <input id="songauthorname" type="text" class="form-control" name="songauthorname" value="{{ $user->name }}" required readonly>
+                        <input id="songauthor" type="hidden" class="form-control" name="songauthor" value="{{ $user->id }}" required readonly>
                         @error('songauthor')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label for="albumname" class="col-md-4 col-form-label text-md-right">{{ __('Album Name') }}</label>
+                    <div class="col-md-6">
+                        <input id="albumname" type="text" class="form-control" name="albumname" value="{{ $album->albumname }}" required readonly>
+                        <input id="albumid" type="hidden" class="form-control" name="albumid" value="{{ $album->id }}" required readonly>
+                        @error('albumid')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

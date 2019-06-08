@@ -18,9 +18,13 @@ Route::get('/', function () {
 Route::get('/addalbum',function(){
 	return view('album.add')->with('user', Auth::user());
 });
-Route::get('/addsong',function(){
+
+
+/*
+Route::get('/addsong/{albumid}',function(){
 	return view('song.add')->with('user', Auth::user());
 });
+*/
 
 Route::post('addalbum','AlbumController@create');
 Route::post('uploadcrop','AlbumController@uploadcrop');
@@ -34,5 +38,11 @@ Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
 
 Route::get('/album/{user}', 'AlbumController@index')->name('album.show');
+<<<<<<< HEAD
 Route::get('/directory', 'AlbumController@showall');
+=======
+Route::get('/addsong/{user}/{albumid}', 'SongController@addsong');
+
+
+>>>>>>> 587838e207b4c1528cd38fe614234966ac7769a1
 
