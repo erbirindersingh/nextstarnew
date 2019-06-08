@@ -163,23 +163,23 @@ $(document).ready(function()
         size: 'viewport'
         }).then(function(response){
             $.ajax({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            url:"uploadcrop",
-            type: "post",
-            data:{"image": response},
-            success:function(data)
-            {
-                console.log("SOmething"+data);
-                $('#uploadimageModal').modal('hide');
-                $('#uploaded_image').html(data.split("~")[0]);
-                
-                $('#upload_image1').attr("value",data.split("~")[1]);
-                $('#upload_image').attr("value",data.split("~")[0]);
-                
-            }
-        });
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url:"uploadcrop",
+                type: "post",
+                data:{"image": response},
+                success:function(data)
+                {
+                    console.log("SOmething"+data);
+                    $('#uploadimageModal').modal('hide');
+                    $('#uploaded_image').html(data.split("~")[0]);
+                    
+                    $('#upload_image1').attr("value",data.split("~")[1]);
+                    $('#upload_image').attr("value",data.split("~")[0]);
+                    
+                }
+            });
         })
     });
 });  

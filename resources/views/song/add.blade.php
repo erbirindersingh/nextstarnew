@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-	        <form method="POST" action="{{ route('register') }}">
+	        <form method="POST" action="addsong">
                 @csrf
                 <div class="form-group row">
                     <label for="songfile" class="col-md-4 col-form-label text-md-right">{{ __('Select File') }}</label>
