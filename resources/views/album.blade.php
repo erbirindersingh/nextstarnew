@@ -17,7 +17,7 @@
                                     <div class='col-lg-3 col-md-4 col-sm-6 col-xs-6 album' style='background-image:url("/images/albums/{{$album->id}}.jpg");' id="{{$album->id}}">
                                         
                                         <div class='albumtext'> 
-                                            <div>{{ $album->albumname }}</div>
+                                            <div class="albumname">{{ $album->albumname }}</div>
                                             <div><a href="/albumdel"><img src="{{URL::asset('/images/bin.png')}}" class='del'></a></div>
                                             <div><a href="/albumedit"><img src="{{URL::asset('/images/edit.png')}}" class='edit'></a></div>
                                         </div>
@@ -31,7 +31,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <fieldset class="scheduler-border">
                         <div><input type="hidden" id="selectedAlbum" name="selectedAlbum"></div>
-                        <legend class="scheduler-border">Songs in <span id="albumname"></span></legend>
+                        <legend class="scheduler-border">Songs in <span id="selectedAlbumName"></span></legend>
                         <div class="row control-group">
                             <div class='col-lg-3 col-md-4 col-sm-6 col-xs-6 song hidden' id="0" style='background-image:url("/images/add.png");'>
 
@@ -51,8 +51,12 @@
                 $(location).attr('href', '/addalbum');
             }
             else{
+                //console.log($(this).find(".albumname").html());
+                //alert($selectedAlbumName);
                 $("#selectedAlbum").val(this.id);
+                $("#selectedAlbumName").html($(this).find(".albumname").html());
                 $(".song").removeClass("hidden");
+                
             }
         });
         $(".song").click(function(){
