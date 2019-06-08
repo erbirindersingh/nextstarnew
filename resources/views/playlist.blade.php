@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h1>List of Albums</h1>
+            <h1>Create your play list here</h1>
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <fieldset class="scheduler-border">
@@ -68,6 +68,3 @@ x.pause();
 -->
 
 @endsection
-
-
-s
