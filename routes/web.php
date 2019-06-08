@@ -38,11 +38,11 @@ Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
 
 Route::get('/album/{user}', 'AlbumController@index')->name('album.show');
-<<<<<<< HEAD
+
 Route::get('/directory', 'AlbumController@showall');
-=======
+
 Route::get('/addsong/{user}/{albumid}', 'SongController@addsong');
 
 
->>>>>>> 587838e207b4c1528cd38fe614234966ac7769a1
+Route::get('/playlist', 'AlbumController@showall');
 
