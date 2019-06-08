@@ -51252,13 +51252,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\PC\Desktop\nextstar\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\PC\Desktop\nextstar\resources\sass\app.scss */"./resources/sass/app.scss");
-=======
-__webpack_require__(/*! H:\Semester 3\Adam\nextstarnew\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! H:\Semester 3\Adam\nextstarnew\resources\sass\app.scss */"./resources/sass/app.scss");
->>>>>>> ab2919bc96a014b32d29f7b26be3f46c067a2566
 
 
 /***/ })
