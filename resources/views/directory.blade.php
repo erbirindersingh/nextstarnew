@@ -4,37 +4,28 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h1>Upload A New Song</h1>
+            <h1>List of Albums</h1>
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <fieldset class="scheduler-border">
-        			    <legend class="scheduler-border">Select one of {{$user->name}}'s Albums</legend>
         			    <div class="row control-group">
-                            <div class='col-lg-3 col-md-4 col-sm-6 col-xs-6 album' id="0" style='background-image:url("/images/add.png");'>
-                                
-                            </div>
                             @foreach ($albums as $album)
                                     <div class='col-lg-3 col-md-4 col-sm-6 col-xs-6 album' style='background-image:url("/images/albums/{{$album->id}}.jpg");' id="{{$album->id}}">
                                         
                                         <div class='albumtext'> 
-                                            <div class="albumname">{{ $album->albumname }}</div>
-                                            <div><a href="/albumdel"><img src="{{URL::asset('/images/bin.png')}}" class='del'></a></div>
-                                            <div><a href="/albumedit"><img src="{{URL::asset('/images/edit.png')}}" class='edit'></a></div>
+                                            <div>{{ $album->albumname }}</div>
                                         </div>
                                         
                                     </div>
                             @endforeach
-                            
         			    </div>
         			</fieldset>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <fieldset class="scheduler-border">
-                        <div><input type="hidden" id="selectedAlbum" name="selectedAlbum"></div>
-                        <legend class="scheduler-border">Songs in <span id="selectedAlbumName"></span></legend>
+                        <legend class="scheduler-border">Songs in </legend>
                         <div class="row control-group">
-                            <div class='col-lg-3 col-md-4 col-sm-6 col-xs-6 song hidden' id="0" style='background-image:url("/images/add.png");'>
-
+                            
                         </div>
                     </fieldset>
                 </div>
@@ -46,24 +37,14 @@
 
 <script type="application/javascript">
     $(document).ready(function(){
-
         $(".album").click(function(){
             if(this.id==0){
                 $(location).attr('href', '/addalbum');
             }
-            else{
-                //console.log($(this).find(".albumname").html());
-                //alert($selectedAlbumName);
-                $("#selectedAlbum").val(this.id);
-                $("#selectedAlbumName").html($(this).find(".albumname").html());
-                $(".song").removeClass("hidden");
-                
-            }
         });
         $(".song").click(function(){
             if(this.id==0){
-                $albumId=$("#selectedAlbum").val();
-                $(location).attr('href', '/addsong/'+{{$user->id}}+'/'+$albumId);
+                $(location).attr('href', '/addsong');
             }
         });
     });
@@ -83,6 +64,7 @@ function pauseAudio() {
 x.pause(); 
 } 
 </script>
+
 -->
 
 @endsection
