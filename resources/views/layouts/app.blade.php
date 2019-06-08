@@ -53,7 +53,7 @@
                     </ul>
 
                     <ul class="navbar-nav ml-auto icons">
-                        <li><img src="{{URL::asset('/images/directory.png')}}"><div>DIRECTORY</div></li>
+                        <li><a href='/directory'><img src="{{URL::asset('/images/directory.png')}}"><div>DIRECTORY</div></a></li>
                         @if(Auth::user()->role==1)
                             <li><a href='/album/{{Auth::user()->id}}'><img src="{{URL::asset('/images/upload.png')}}"><div>UPLOAD</div></a></li>
                         @endif

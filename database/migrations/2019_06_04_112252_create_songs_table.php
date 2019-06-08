@@ -14,8 +14,17 @@ class CreateSongsTable extends Migration
     public function up()
     {
         Schema::create('songs', function (Blueprint $table) {
-            $table->bigIncrements('id');
+			$table->bigIncrements('id');
+            $table->string('title');
+            $table->bigInteger('artistid')->unsigned();
+            $table->bigInteger('albumid')->unsigned();
+            $table->string('genre');
             $table->timestamps();
+        });
+		
+		Schema::table('songs', function (Blueprint $table) {
+            $table->foreign('artistid')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('albumid')->references('id')->on('albums')->onDelete('cascade');
         });
     }
 

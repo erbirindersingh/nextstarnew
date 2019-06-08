@@ -27,10 +27,6 @@ Route::post('uploadcrop','AlbumController@uploadcrop');
 
 
 
-Route::get('/player',function(){
-	return view('player');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -38,4 +34,5 @@ Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
 
 Route::get('/album/{user}', 'AlbumController@index')->name('album.show');
+Route::get('/directory', 'AlbumController@showall');
 
