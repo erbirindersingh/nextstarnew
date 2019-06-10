@@ -31,7 +31,7 @@ a,a:hover{
 
 #footer {
   position: absolute;
-  bottom: 15vh;
+  bottom: 8vh;
   width: 100%;
   height: 2.5rem;            /* Footer height */
 }
@@ -175,6 +175,81 @@ a,a:hover{
 .home-nav-button{
   color:white;
 }
+
+
+.homeusercontainer{
+	display:flex;
+	flex-flow:row wrap;
+}
+
+#sidebar-one {
+	width:23%;	
+	order:-1;
+	padding:10px;
+	margin-left:10px;
+}
+#main {
+	width:50%;
+	display:inline-block;
+	margin-left:2%;
+	margin-right:2%;
+	padding:10px;
+	flex:2 0 0;
+}
+
+#sidebar-two{	
+	float:right;
+	width:23%;
+	padding:10px;
+}
+
+#FeaturedUserPicture{
+	width:100%;
+	height:auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin-top: 20px;
+}
+.grid-item {
+  margin:5px 2px;
+}
+
+.userpics{
+	width:150px;
+	height:150px;
+}
+
+.userpics:hover{
+  cursor:pointer;
+}
+
+#featuredUserTitle{
+	text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+	border-bottom: double;
+}
+
+#featuredtitle{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+	border-bottom: double;
+}
+
+.featuredmonthuserpic{
+	text-align: center;
+}
+
+.featuredmonth{
+	font-size: 20px;
+    font-weight: 600;
+}
+
+
 @media only screen and (max-width: 380px) {
   /* For mobile phones: */
   #homepage-left-content {

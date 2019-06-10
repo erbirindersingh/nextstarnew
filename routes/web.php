@@ -47,3 +47,5 @@ Route::get('/playlist', 'AlbumController@showall');
 
 Route::get('/fetchsongs/{albumid}', 'AlbumController@fetchsongs')->name('album.show');
 
+Route::get('/homeuser/{user}', 'HomeController@showall');
+
