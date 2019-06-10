@@ -50,7 +50,9 @@
                             </span>
                         @enderror
                     </div>
-
+                </div>
+                    
+                <div class="form-group row">
                     <label for="albumauthorname" class="col-md-4 col-form-label text-md-right">{{ __('Album Artist') }}</label>
                     <div class="col-md-6">
                         <input id="albumauthorname" type="text" class="form-control" name="albumauthorname" value="{{ $user->name }}" required readonly>
@@ -61,6 +63,8 @@
                             </span>
                         @enderror
                     </div>
+                </div>
+                <div class="form-group row">
                     <div class="col-md-6 offset-md-4">
                         <button type="submit" class="btn btn-primary">
                             {{ __('Add Album') }}
