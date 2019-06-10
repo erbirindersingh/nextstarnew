@@ -46,8 +46,10 @@
 
 <script type="application/javascript">
     $(document).ready(function(){
-
-        $(".album").click(function(){
+        $(".album").click(function(event){
+            event.stopPropagation();
+            event.stopImmediatePropagation();
+            alert(this.id);
             if(this.id==0){
                 $(location).attr('href', '/addalbum');
             }
@@ -57,6 +59,13 @@
                 $("#selectedAlbum").val(this.id);
                 $("#selectedAlbumName").html($(this).find(".albumname").html());
                 $(".song").removeClass("hidden");
+
+                $albumId=$("#selectedAlbum").val();
+                $.ajax({url: "/fetchsongs/"+$albumId, success: function(result)
+                {
+                    alert(result);
+                }});
+                
                 
             }
         });

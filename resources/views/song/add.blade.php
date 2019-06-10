@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-	        <form method="POST" action="addsong">
+	        <form method="POST" action="{{ action('SongController@create') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group row">
                     <label for="songfile" class="col-md-4 col-form-label text-md-right">{{ __('Select File') }}</label>
@@ -62,30 +62,30 @@
                     <div class="col-md-6">
                         <select id="songgenre" class="form-control" name="songgenre" required>
                             
-                            <option value="1" >A Capella</option>
-                            <option value="2" >Acid</option>
-                            <option value="7" >Alternative</option>
-                            <option value="30" >Classical</option>
-                            <option value="35" >Contemporary</option>
-                            <option value="36" >Country</option>
-                            <option value="40" >Dance</option>
-                            <option value="46" >Disco</option>
-                            <option value="54" >Electronic/Techno</option>
-                            <option value="69" >Garage</option>
-                            <option value="82" >House</option>
-                            <option value="70" >Inspirational/Christian</option>
-                            <option value="86" >Instrumental</option>
-                            <option value="89" >Jazz</option>
-                            <option value="95" >Latin</option>
-                            <option value="98" >Metal</option>
-                            <option value="103" >New Age</option>
-                            <option value="116" >Pop</option>
-                            <option value="128" >R&B/Soul</option>
-                            <option value="129" >Rap/Hip Hop</option>
-                            <option value="133" >Reggae</option>
-                            <option value="140" >Rock</option>
-                            <option value="165" >Techno</option>
-                            <option value="170" >Trance</option>
+                            <option value="A Capella">A Capella</option>
+                            <option value="2">Acid</option>
+                            <option value="7">Alternative</option>
+                            <option value="30">Classical</option>
+                            <option value="35">Contemporary</option>
+                            <option value="36">Country</option>
+                            <option value="40">Dance</option>
+                            <option value="46">Disco</option>
+                            <option value="54">Electronic/Techno</option>
+                            <option value="69">Garage</option>
+                            <option value="82">House</option>
+                            <option value="70">Inspirational/Christian</option>
+                            <option value="86">Instrumental</option>
+                            <option value="89">Jazz</option>
+                            <option value="95">Latin</option>
+                            <option value="98">Metal</option>
+                            <option value="103">New Age</option>
+                            <option value="116">Pop</option>
+                            <option value="128">R&B/Soul</option>
+                            <option value="129">Rap/Hip Hop</option>
+                            <option value="133">Reggae</option>
+                            <option value="140">Rock</option>
+                            <option value="165">Techno</option>
+                            <option value="170">Trance</option>
                         </select>
                         @error('songgenre')
                             <span class="invalid-feedback" role="alert">

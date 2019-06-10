@@ -19,6 +19,7 @@ class CreateSongsTable extends Migration
             $table->bigInteger('artistid')->unsigned();
             $table->bigInteger('albumid')->unsigned();
             $table->string('genre');
+            $table->boolean('isdeleted');
             $table->timestamps();
         });
 		

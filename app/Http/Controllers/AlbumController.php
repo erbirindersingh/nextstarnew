@@ -3,11 +3,27 @@
 namespace App\Http\Controllers;
 use App\User;
 use App\Album;
+
 use Illuminate\Http\Request;
 use DB;
 
 class AlbumController extends Controller
 {
+    public function fetchsongs($albumid)
+    {
+        $songs=DB::table('Songs')->where('albumid',$albumid)->where('isdeleted',0)->get();
+        $table="<table class='table table striped'>
+            <thead>
+                <th>#</th>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>Action</th>
+            </thead><tbody>";
+        foreach($songs as $song)
+        {
+            
+        }
+    }
     public function index($user)
     {
     	$user=User::find($user);

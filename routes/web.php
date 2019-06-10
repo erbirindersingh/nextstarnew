@@ -28,6 +28,7 @@ Route::get('/addsong/{albumid}',function(){
 
 Route::post('addalbum','AlbumController@create');
 Route::post('uploadcrop','AlbumController@uploadcrop');
+Route::post('addsong','SongController@create');
 
 
 
@@ -38,8 +39,11 @@ Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
 
 Route::get('/album/{user}', 'AlbumController@index')->name('album.show');
+Route::get('/fetchsongs/{albumid}', 'AlbumController@fetchsongs')->name('album.show');
+
 
 Route::get('/directory', 'AlbumController@showall');
+
 
 Route::get('/addsong/{user}/{albumid}', 'SongController@addsong');
 
