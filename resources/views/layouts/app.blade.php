@@ -45,7 +45,7 @@
 
                     @else
                     <ul class="navbar-nav mr-auto icons">
-                        <li><img src="{{URL::asset('/images/home.png')}}"><div>HOME</div></li>
+                        <li><a href='/homeuser/{{Auth::user()->id}}'><img src="{{URL::asset('/images/home.png')}}"><div>HOME</div></a></li>
                         <li><img src="{{URL::asset('/images/hub.png')}}"><div>HUB</div></li>
                         <li><a href='/playlist'><img src="{{URL::asset('/images/playlist.png')}}"><div>LIST</div></a></li>
                         <li><img src="{{URL::asset('/images/charts.png')}}"><div>CHART</div></a></li>

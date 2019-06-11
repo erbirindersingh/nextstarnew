@@ -23,6 +23,7 @@ class SongController extends Controller
         ];
     	return view('song.add')->with($data);
     }
+	
     public function create(Request $request)
     {
         
