@@ -10946,6 +10946,14 @@ a:hover {
   font-weight: 600;
 }
 
+#profilecontent {
+  padding: 10px;
+  border: 1px solid black;
+  margin-bottom: 50px;
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px 10px 10px 10px;
+}
+
 @media only screen and (max-width: 380px) {
   /* For mobile phones: */
 

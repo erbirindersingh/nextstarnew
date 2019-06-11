@@ -29,6 +29,7 @@ Route::get('/addsong/{albumid}',function(){
 Route::post('addalbum','AlbumController@create');
 Route::post('uploadcrop','AlbumController@uploadcrop');
 Route::post('addsong','SongController@create');
+Route::post('userprofile','UsersprofileController@editprofile');
 
 
 
