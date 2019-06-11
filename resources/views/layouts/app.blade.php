@@ -88,6 +88,7 @@
                                     {{ __('Logout') }}
                                 </a>
 
+<<<<<<< HEAD
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
@@ -97,6 +98,31 @@
                 </ul>
 
             </div>
+=======
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href='/userprofile'
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('userprofile-form').submit();">
+                                        {{ __('Edit Profile') }}
+                                    </a>
+                                    <form id="userprofile-form" action="/userprofile" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+									
+									<a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+                </div>
+>>>>>>> 536b8cc91fefb56ce99e521287f3b35605e40029
             </div>
         </nav>
 
