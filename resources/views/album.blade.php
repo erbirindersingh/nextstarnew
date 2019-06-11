@@ -33,50 +33,74 @@
                         <div><input type="hidden" id="selectedAlbum" name="selectedAlbum"></div>
                         <legend class="scheduler-border">Songs in <span id="selectedAlbumName"></span></legend>
                         <div class="row control-group">
-                            <div class='col-lg-3 col-md-4 col-sm-6 col-xs-6 song hidden' id="0" style='background-image:url("/images/add.png");'>
-
+                            <div class='col-lg-3 col-md-3 col-sm-3 col-xs-9'>
+                                <img src="/images/addsong.png" class="song hidden">
+                            </div>
+                            <div class='col-lg-9 col-md-9 col-sm-9 col-xs-9'>
+                                <audio controls autoplay id="player">
+                                  <source id="playersrc" src="/songs/1559975352/1559976153.mp3" type="audio/mpeg">
+                                </audio>
+                            </div>    
                         </div>
                     </fieldset>
+                    <br/>
+                    <div id="songlist"></div>
                 </div>
-                
             </div>
         </div>
     </div>
 </div>
 
 <script type="application/javascript">
-    $(document).ready(function(){
+    $(document).ready(function()
+    {
+        $("#pause").click(function(){
+            $("#player")[0].play();
+        }); 
+
         $(".album").click(function(event){
             event.stopPropagation();
             event.stopImmediatePropagation();
-            alert(this.id);
-            if(this.id==0){
+            if(this.id==0)
+            {
                 $(location).attr('href', '/addalbum');
             }
-            else{
-                //console.log($(this).find(".albumname").html());
-                //alert($selectedAlbumName);
+            else
+            {
                 $("#selectedAlbum").val(this.id);
                 $("#selectedAlbumName").html($(this).find(".albumname").html());
                 $(".song").removeClass("hidden");
-
                 $albumId=$("#selectedAlbum").val();
                 $.ajax({url: "/fetchsongs/"+$albumId, success: function(result)
                 {
-                    alert(result);
-                }});
-                
-                
+                    $("#songlist").html(result);
+                    $(function() {
+                        $(document).on('click', '.playbtn', function() {
+                            event.stopPropagation();
+                            event.stopImmediatePropagation();
+                            $("#playersrc").attr('src','/songs/'+this.id+'.mp3');
+                            $("#player")[0].load();
+                            $("#player")[0].play();    
+                        });
+                    });
+                }});     
             }
         });
+
+        
+
         $(".song").click(function(){
-            if(this.id==0){
-                $albumId=$("#selectedAlbum").val();
-                $(location).attr('href', '/addsong/'+{{$user->id}}+'/'+$albumId);
+            if(this.id==0)
+            {
+                var albumId=$("#selectedAlbum").val();    
+                $(location).attr('href','/addsong/{{$user->id}}/'+albumId);
             }
-        });
+        });   
+
+       
     });
 </script>
+
 
 <!--
 <div id="player">
@@ -95,5 +119,10 @@ x.pause();
 -->
 
 @endsection
+
+
+       
+
+        
 
 

@@ -98,18 +98,26 @@ a,a:hover{
   display:none;  
 }
 
-.album,.song{
+.album{
   position: relative;  
   padding:.2em;
   width: 100%;
   background-size:contain;
   cursor:pointer;
 }
-.album:before,.song:before{
+.album:before{
   content: "";
   display: block;
   padding-top: 100%;  /*What you want the height to be in relation to the width*/
 }
+
+.song{
+ 
+}
+.song:before{
+ 
+}
+
 .albumtext{
   position: absolute;
   background-color:#6d00d9;
@@ -127,6 +135,16 @@ a,a:hover{
   -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+}
+#songlist{
+  padding:0 0 0 2em;
+}
+.table{
+  padding:1em;
+}
+.table td{
+  padding:.2em;
+  font-size:.9em;
 }
 
 

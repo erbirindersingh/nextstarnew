@@ -12,17 +12,26 @@ class AlbumController extends Controller
     public function fetchsongs($albumid)
     {
         $songs=DB::table('Songs')->where('albumid',$albumid)->where('isdeleted',0)->get();
-        $table="<table class='table table striped'>
+        $table="<table class='table table-striped'>
             <thead>
                 <th>#</th>
                 <th>Title</th>
                 <th>Genre</th>
                 <th>Action</th>
             </thead><tbody>";
+        $n=1;
         foreach($songs as $song)
         {
-            
+            $table.="<tr>
+                <td>$n</td>
+                <td>$song->title</td>
+                <td>$song->genre</td>
+                <td><button class='btn btn-success playbtn' id='$albumid/$song->id'>Play</button></td>
+            </tr>";
+            $n++;
         }
+        $table.="</tbody></table>";
+        return($table);
     }
     public function index($user)
     {

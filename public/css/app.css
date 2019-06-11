@@ -10777,8 +10777,7 @@ a:hover {
   display: none;
 }
 
-.album,
-.song {
+.album {
   position: relative;
   padding: 0.2em;
   width: 100%;
@@ -10786,8 +10785,7 @@ a:hover {
   cursor: pointer;
 }
 
-.album:before,
-.song:before {
+.album:before {
   content: "";
   display: block;
   padding-top: 100%;
@@ -10812,6 +10810,19 @@ a:hover {
 .album:hover,
 .song:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+}
+
+#songlist {
+  padding: 0 0 0 2em;
+}
+
+.table {
+  padding: 1em;
+}
+
+.table td {
+  padding: 0.2em;
+  font-size: 0.9em;
 }
 
 .edit {
