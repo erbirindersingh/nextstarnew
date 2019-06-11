@@ -20,6 +20,8 @@ Route::get('/addalbum',function(){
 });
 
 
+
+
 /*
 Route::get('/addsong/{albumid}',function(){
 	return view('song.add')->with('user', Auth::user());
@@ -39,11 +41,15 @@ Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
 
 Route::get('/album/{user}', 'AlbumController@index')->name('album.show');
+Route::get('/hub/{user}', 'AlbumController@showhub');
+Route::get('/addtoplaylist/{songid}', 'AlbumController@addtoplaylist');
+Route::get('/playlist', 'AlbumController@showplaylist');
+Route::get('/notifications', 'AlbumController@shownotifications');
+
 
 Route::get('/directory', 'AlbumController@showall');
 
 Route::get('/addsong/{user}/{albumid}', 'SongController@addsong');
-Route::get('/playlist', 'AlbumController@showall');
 
 Route::get('/fetchsongs/{albumid}', 'AlbumController@fetchsongs')->name('album.show');
 

@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="homeusercontainer">
-	<aside id="sidebar-one">
-		<div id="FeaturedUserProfile">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div id="FeaturedUserProfile">
 				<div id="featuredUserTitle">
 					SPOTLIGHT: SWILLY
 				</div>
@@ -13,103 +14,100 @@
 					</p>
 				</div>
 			</div>
-	</aside>
-	<main id="main">
-		<div class="row justify-content-center">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<div id="FeaturedUserPic">	
-					<div>
-						<a href="/albumedit">
-							<img src="{{URL::asset('/images/homeuser/swillypic.png')}}" id="FeaturedUserPicture">
-						</a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="row justify-content-center">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div id="FeaturedUserPic">	
+						<div>
+							<a href="/albumedit">
+								<img src="{{URL::asset('/images/homeuser/swillypic.png')}}" id="FeaturedUserPicture">
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<div class="grid-container">
-					<div class="grid-item">
-						<img src="{{URL::asset('/images/homeuser/ache.jpg')}}" class="userpics">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="grid-container">
+						<div class="grid-item">
+							<img src="{{URL::asset('/images/homeuser/ache.jpg')}}" class="userpics">
+						</div>
+						<div class="grid-item">
+							<img src="{{URL::asset('/images/homeuser/carmen.jpg')}}" class="userpics">
+						</div>
+						<div class="grid-item">
+							<img src="{{URL::asset('/images/homeuser/veris.jpg')}}" class="userpics">
+						</div>
+						<div class="grid-item">
+							<img src="{{URL::asset('/images/homeuser/paul.jpg')}}" class="userpics">
+						</div>
+						<div class="grid-item">
+							<img src="{{URL::asset('/images/homeuser/demina.jpg')}}" class="userpics">
+						</div>
+						<div class="grid-item">
+							<img src="{{URL::asset('/images/homeuser/jennifer.jpg')}}" class="userpics">
+						</div>
+						<div class="grid-item">
+							<img src="{{URL::asset('/images/homeuser/biggreg.jpg')}}" class="userpics">
+						</div>
+						<div class="grid-item">
+							<img src="{{URL::asset('/images/homeuser/phillip.jpg')}}" class="userpics">
+						</div>
+						<div class="grid-item">
+							<img src="{{URL::asset('/images/homeuser/patrice.jpg')}}" class="userpics">
+						</div>
+						<div class="grid-item">
+							<img src="{{URL::asset('/images/homeuser/bamil.jpg')}}" class="userpics">
+						</div>
+						<div class="grid-item">
+							<img src="{{URL::asset('/images/homeuser/jcraig.jpg')}}" class="userpics">
+						</div>
+						<div class="grid-item">
+							<img src="{{URL::asset('/images/homeuser/nicki.jpg')}}" class="userpics">
+						</div>
+						<div class="grid-item">
+							<img src="{{URL::asset('/images/homeuser/honeybeard.jpg')}}" class="userpics">
+						</div>
+						<div class="grid-item">
+							<img src="{{URL::asset('/images/homeuser/shimmer.jpg')}}" class="userpics">
+						</div> 
+						<div class="grid-item">
+							<img src="{{URL::asset('/images/homeuser/noel.jpg')}}" class="userpics">
+						</div> 
 					</div>
-					<div class="grid-item">
-						<img src="{{URL::asset('/images/homeuser/carmen.jpg')}}" class="userpics">
-					</div>
-					<div class="grid-item">
-						<img src="{{URL::asset('/images/homeuser/veris.jpg')}}" class="userpics">
-					</div>
-					<div class="grid-item">
-						<img src="{{URL::asset('/images/homeuser/paul.jpg')}}" class="userpics">
-					</div>
-					<div class="grid-item">
-						<img src="{{URL::asset('/images/homeuser/demina.jpg')}}" class="userpics">
-					</div>
-					<div class="grid-item">
-						<img src="{{URL::asset('/images/homeuser/jennifer.jpg')}}" class="userpics">
-					</div>
-					<div class="grid-item">
-						<img src="{{URL::asset('/images/homeuser/biggreg.jpg')}}" class="userpics">
-					</div>
-					<div class="grid-item">
-						<img src="{{URL::asset('/images/homeuser/phillip.jpg')}}" class="userpics">
-					</div>
-					<div class="grid-item">
-						<img src="{{URL::asset('/images/homeuser/patrice.jpg')}}" class="userpics">
-					</div>
-					<div class="grid-item">
-						<img src="{{URL::asset('/images/homeuser/bamil.jpg')}}" class="userpics">
-					</div>
-					<div class="grid-item">
-						<img src="{{URL::asset('/images/homeuser/jcraig.jpg')}}" class="userpics">
-					</div>
-					<div class="grid-item">
-						<img src="{{URL::asset('/images/homeuser/nicki.jpg')}}" class="userpics">
-					</div>
-					<div class="grid-item">
-						<img src="{{URL::asset('/images/homeuser/honeybeard.jpg')}}" class="userpics">
-					</div>
-					<div class="grid-item">
-						<img src="{{URL::asset('/images/homeuser/shimmer.jpg')}}" class="userpics">
-					</div> 
-					<div class="grid-item">
-						<img src="{{URL::asset('/images/homeuser/noel.jpg')}}" class="userpics">
-					</div> 
 				</div>
 			</div>
-		</div>
-	</main>
-	
-	<aside id="sidebar-two">
-		<div id="featuredmonthcolumn">
-			<div id="featuredtitle">
-				<p>2019</p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+           	<div id="featuredmonthcolumn">
+				<div id="featuredtitle">
+					<p>2019</p>
+				</div>
+				<div class="featuredmonthuserdetails">
+					<div class="featuredmonthuserpic">
+						<p class="featuredmonth">January</p>
+						<img src="{{URL::asset('/images/homeuser/jan.jpg')}}" class="userpics">
+					</div>
+					<div class="featuredmonthuserpic">
+						<p class="featuredmonth">February</p>
+						<img src="{{URL::asset('/images/homeuser/feb.jpg')}}" class="userpics">
+					</div>
+					<div class="featuredmonthuserpic">
+						<p class="featuredmonth">March</p>
+						<img src="{{URL::asset('/images/homeuser/mar.jpg')}}" class="userpics">
+					</div>
+					<div class="featuredmonthuserpic">
+						<p class="featuredmonth">April</p>
+						<img src="{{URL::asset('/images/homeuser/apr.jpg')}}" class="userpics">
+					</div>
+					<div class="featuredmonthuserpic">
+						<p class="featuredmonth">May</p>
+						<img src="{{URL::asset('/images/homeuser/may.jpg')}}" class="userpics">
+					</div>				
+				</div>
 			</div>
-			<div class="featuredmonthuserdetails">
-				<div class="featuredmonthuserpic">
-					<p class="featuredmonth">January</p>
-					<img src="{{URL::asset('/images/homeuser/jan.jpg')}}" class="userpics">
-				</div>
-				<div class="featuredmonthuserpic">
-					<p class="featuredmonth">February</p>
-					<img src="{{URL::asset('/images/homeuser/feb.jpg')}}" class="userpics">
-				</div>
-				<div class="featuredmonthuserpic">
-					<p class="featuredmonth">March</p>
-					<img src="{{URL::asset('/images/homeuser/mar.jpg')}}" class="userpics">
-				</div>
-				<div class="featuredmonthuserpic">
-					<p class="featuredmonth">April</p>
-					<img src="{{URL::asset('/images/homeuser/apr.jpg')}}" class="userpics">
-				</div>
-				<div class="featuredmonthuserpic">
-					<p class="featuredmonth">May</p>
-					<img src="{{URL::asset('/images/homeuser/may.jpg')}}" class="userpics">
-				</div>				
-			</div>
-		</div>
-	</aside>
+        </div>
+    </div>
 </div>
-
 @endsection
-
-

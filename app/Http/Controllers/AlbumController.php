@@ -3,21 +3,30 @@
 namespace App\Http\Controllers;
 use App\User;
 use App\Album;
+use App\Playlist;
+use App\Song;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use DB;
 
 class AlbumController extends Controller
 {
-    public function fetchsongs($albumid)
+    public function showhub($userid)
     {
-        $songs=DB::table('Songs')->where('albumid',$albumid)->where('isdeleted',0)->get();
+        $songs=DB::table('Songs')->where('isdeleted',0)->get();
+        $data=[
+            'songs' => $songs,
+        ];
+
+        return view('hub')->with($data);
+        /*
         $table="<table class='table table-striped'>
             <thead>
                 <th>#</th>
                 <th>Title</th>
                 <th>Genre</th>
-                <th>Action</th>
+                <th colspan='2'>Action</th>
             </thead><tbody>";
         $n=1;
         foreach($songs as $song)
@@ -27,6 +36,69 @@ class AlbumController extends Controller
                 <td>$song->title</td>
                 <td>$song->genre</td>
                 <td><button class='btn btn-success playbtn' id='$albumid/$song->id'>Play</button></td>
+                <td><button class='btn btn-primary playlistbtn' id='$song->id'>Add To Playlist</button></td>
+            </tr>";
+            $n++;
+        }
+        $table.="</tbody></table>";
+        return($table);
+        */
+    }
+    public function shownotifications(){
+        return view('notifications');   
+    }
+    public function showplaylist()
+    {
+        $user=Auth::user();
+        $playlist=DB::table('Playlists')->where('userid',$user->id)->get();
+         $data=[
+            'playlist' => $playlist,
+        ];
+        return view('playlist')->with($data);
+    }
+    public function addtoplaylist($songid)
+    {
+        $user=Auth::user();
+        //$song=Song::where('id', '=', $songid)->firstOrFail();
+
+        $song = DB::table('songs')->select('songs.id AS sid','albums.albumname AS albumname','songs.albumid AS albumid','songs.title as stitle','users.name as artist')->join('albums','albums.id', '=', 'songs.albumid')->join('users','users.id','=','songs.artistid')->where('songs.id',$songid)->first();
+
+        //return(dd($song));
+
+        $id=time();    
+        $playlist = new Playlist();
+
+        $playlist->id = $id; 
+        $playlist->userid = $user->id;
+        $playlist->songid = $song->sid;
+        $playlist->albumid = $song->albumid;
+        $playlist->songtitle = $song->stitle;
+        $playlist->artist = $song->artist;
+        $playlist->albumname = $song->albumname;
+        $playlist->created_at = $id;
+        $playlist->updated_at = $id;
+        $playlist->save();
+        return "Added to Playlist";
+    }
+    public function fetchsongs($albumid)
+    {
+        $songs=DB::table('Songs')->where('albumid',$albumid)->where('isdeleted',0)->get();
+        $table="<table class='table table-striped'>
+            <thead>
+                <th>#</th>
+                <th>Title</th>
+                <th>Genre</th>
+                <th colspan='2'>Action</th>
+            </thead><tbody>";
+        $n=1;
+        foreach($songs as $song)
+        {
+            $table.="<tr>
+                <td>$n</td>
+                <td>$song->title</td>
+                <td>$song->genre</td>
+                <td><button class='btn btn-success playbtn' id='$albumid/$song->id'>Play</button></td>
+                <td><button class='btn btn-primary playlistbtn' id='$song->id'>Add To Playlist</button></td>
             </tr>";
             $n++;
         }

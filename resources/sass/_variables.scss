@@ -143,7 +143,7 @@ a,a:hover{
   padding:1em;
 }
 .table td{
-  padding:.2em;
+  padding:.2em .75em;
   font-size:.9em;
 }
 
@@ -200,26 +200,6 @@ a,a:hover{
 	flex-flow:row wrap;
 }
 
-#sidebar-one {
-	width:23%;	
-	order:-1;
-	padding:10px;
-	margin-left:10px;
-}
-#main {
-	width:50%;
-	display:inline-block;
-	margin-left:2%;
-	margin-right:2%;
-	padding:10px;
-	flex:2 0 0;
-}
-
-#sidebar-two{	
-	float:right;
-	width:23%;
-	padding:10px;
-}
 
 #FeaturedUserPicture{
 	width:100%;
@@ -231,9 +211,6 @@ a,a:hover{
   grid-template-columns: auto auto auto auto;
   margin-top: 20px;
 }
-.grid-item {
-  margin:5px 2px;
-}
 
 .userpics{
 	width:150px;
@@ -242,6 +219,10 @@ a,a:hover{
 
 .userpics:hover{
   cursor:pointer;
+}
+
+#featuredmonthcolumn{
+  text-align:right;  
 }
 
 #featuredUserTitle{

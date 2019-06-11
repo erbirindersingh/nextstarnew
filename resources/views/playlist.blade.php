@@ -1,70 +1,50 @@
 @extends('layouts.app')
-
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h1>Create your play list here</h1>
-            <div class="row">
-                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                    <fieldset class="scheduler-border">
-        			    <div class="row control-group">
-                            @foreach ($albums as $album)
-                                    <div class='col-lg-3 col-md-4 col-sm-6 col-xs-6 album' style='background-image:url("/images/albums/{{$album->id}}.jpg");' id="{{$album->id}}">
-                                        
-                                        <div class='albumtext'> 
-                                            <div>{{ $album->albumname }}</div>
-                                        </div>
-                                        
-                                    </div>
-                            @endforeach
-        			    </div>
-        			</fieldset>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <fieldset class="scheduler-border">
-                        <legend class="scheduler-border">Songs in </legend>
-                        <div class="row control-group">
-                            
-                        </div>
-                    </fieldset>
-                </div>
-                
-            </div>
-        </div>
-    </div>
+<div class="row">
+<div class='col-lg-6 col-md-6 col-sm-12 col-xs-12'>
+    <h1>Your Playlist</h1>
+</div>    
+<div class='col-lg-6 col-md-6 col-sm-12 col-xs-12'>
+    <audio controls autoplay id="player">
+      <source id="playersrc" src="" type="audio/mpeg">
+    </audio>
+</div> 
 </div>
+<table class='table table-striped'>
+    <thead>
+        <th>#</th>
+        <th>Title</th>
+        <th>Aritst</th>
+        <th>Album</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <?php $n=1; ?>
+        @foreach ($playlist as $song)
+            <?php $path = $song->albumid."/".$song->songid; ?>
+            <tr>
+                <td>{{$n++}}</td>
+                <td>{{$song->songtitle}}</td>
+                <td>{{$song->artist}}</td>
+                <td>{{$song->albumname}}</td>
+                <td><button class='btn btn-success playbtn' id='{{$path}}'>Play</button></td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
+
 
 <script type="application/javascript">
-    $(document).ready(function(){
-        $(".album").click(function(){
-            if(this.id==0){
-                $(location).attr('href', '/addalbum');
-            }
-        });
-        $(".song").click(function(){
-            if(this.id==0){
-                $(location).attr('href', '/addsong');
-            }
+    $(document).ready(function()
+    {
+        $(document).on('click', '.playbtn', function() {
+            event.stopPropagation();
+            event.stopImmediatePropagation();
+            $("#playersrc").attr('src','/songs/'+this.id+'.mp3');
+            $("#player")[0].load();
+            $("#player")[0].play();    
         });
     });
 </script>
-
-<!--
-<div id="player">
-    <audio controls id="myAudio">
-        <source>  
-    </audio>        
-</div>
-
-
-<script type="application/javascript">
-var x = document.getElementById("myAudio"); 
-function pauseAudio() { 
-x.pause(); 
-} 
-</script>
-
--->
 
 @endsection
